@@ -1,6 +1,6 @@
 class ZahlenRaten {
 
-    constructor(inputArea, maxElement, inputElement , hintElement, tryElement) {
+    constructor(inputArea, maxElement, inputElement, hintElement, tryElement) {
 
         this.inputArea = inputArea;
         this.maxElement = maxElement;
@@ -19,7 +19,7 @@ class ZahlenRaten {
         return typeof value == "number";
     }
 
-    strat() {
+    start() {
         this.inputArea
             .classList
             .remove("hide");
@@ -38,10 +38,10 @@ class ZahlenRaten {
 
     reset() {
 
-        this.startButton.disable = false; 
+        this.startButton.disable = false;
         this.maxElement.disable = false;
-        this.tryElement.disable = false; 
-        this.confirmButton.disable = false; 
+        this.tryElement.disable = false;
+        this.confirmButton.disable = false;
         this.inputClosestLower = null;
         this.inputClosestHigher = null;
         this.resetButton
@@ -67,32 +67,32 @@ class ZahlenRaten {
             this.confirmButton.disable = true;
         }
 
-        else if (this.secret > input)  {
-            this.tries = this.tries -1;
-            para.innerText = "My Number is bigger than " + input +". You have " +this.tries+ " tries left."
+        else if (this.secret > input) {
+            this.tries = this.tries - 1;
+            para.innerText = "My Number is bigger than " + input + ". You have " + this.tries + " tries left."
             if (this.inputClosestLower == null || input > this.inputClosestLower) {
                 this.inputClosestLower == input;
             }
         }
 
         else {
-            this.tries = this.tries -1;
-            para.innerText = "My Number is smaller than " + input +". You have " +this.tries+ " tries left."
+            this.tries = this.tries - 1;
+            para.innerText = "My Number is smaller than " + input + ". You have " + this.tries + " tries left."
             if (this.inputClosestHigher == null || input > this.inputClosestHigher) {
                 this.inputClosestHigher == input;
-            } 
+            }
         }
 
-        if (this.tries == 0) {
+        if (this.tries <= 0) {
             para.innerText = "Game Over! Serect Number was " + this.secret;
             this.confirmButton.disable = true;
         }
 
         if ((this.inputClosestHigher != null && input > this.inputClosestHigher)
-        || (this.inputClosestLower != null && input < this.inputClosestLower)) {
+            || (this.inputClosestLower != null && input < this.inputClosestLower)) {
             para.innerText = "Be Carefull you already know that my secret is between "
-            + this.inputClosestLower +" and"
-            + this.inputClosestHigher
+                + this.inputClosestLower + " and"
+                + this.inputClosestHigher
         }
 
         document.getElementById("hint").appendChild(para);
@@ -112,6 +112,6 @@ let startButton = document.getElementById("btnStart");
 let resetButton = document.getElementById("restart");
 let confirmButton = document.getElementById("confirm");
 
-startButton.addEventListener("click", () => ZahlenRaten.start());
-resetButton.addEventListener("click", () => ZahlenRaten.reset());
-confirmButton.addEventListener("click", () => ZahlenRaten.guess());
+startButton.addEventListener("click", () => zahlenRaten.start());
+resetButton.addEventListener("click", () => zahlenRaten.reset());
+confirmButton.addEventListener("click", () => zahlenRaten.guess());

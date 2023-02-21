@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,6 +8,7 @@
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <div class="main">
         <h1 class="heading">Guess the Number</h1>
@@ -20,7 +22,20 @@
             <button class="restart hide" id="restart">restart</button>
 
         </div>
+        <div class="game-area">
+            <div class="input.area hide" id="inputArea">
+                <label for="input">Please give a Number:</label>
+                <input type="number" min="0" step="1" id="input">
+                <div class="confirm">
+                    <button id="confirm">Submit</button>
+                </div>
+            </div>
+            <div class="result-area" id="hint">
+
+            </div>
+        </div>
     </div>
-    
+
 </body>
-</html>ff
+
+</html>

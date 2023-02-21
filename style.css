@@ -1,0 +1,29 @@
+.input-area input {
+    font-weight: bold;
+}
+
+input[type=number] {
+    font-weight: bold;
+    width: 100%;
+    padding: 10px 20px;
+    margin: 6px 0px;
+    box-sizing: border-box;
+    border: none;
+    border-bottom: 2px solid gray;
+}
+
+.main {
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 15%;
+    margin-bottom: 15%;
+}
+
+.game-area {
+    margin-top: 5%;
+}
+
+.hide {
+    display: none;
+}
+
